@@ -20,6 +20,7 @@ const PriceRange = ({ data: { priceRange }, setPriceLevel }) => {
         {priceRange.map((value, index) => {
           return <option value={index}>{value}</option>;
         })}
+         <option value={5}>ไม่กำหนด</option>
       </select>
     </div>
   );

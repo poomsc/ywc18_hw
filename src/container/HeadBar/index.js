@@ -4,18 +4,18 @@ import { CgDetailsMore } from "react-icons/cg";
 
 const HeadBar = ({ setWordSearch, openSideBar, setOpenSideBar }) => {
   return (
-    <nav className="flex flex-wrap bg-white p-3 fixed w-full z-50 h-16">
-      <div class="flex justify-items-center">
-        <div class="flex">
+    <nav class="flex flex-wrap bg-white p-3 fixed w-full z-50 h-16">
+      <div class="flex justify-items-auto">
+        <div class="flex-auto">
           <img
             class="h-10 object-cover rounded-lg rounded-r-none pb-5/6"
             src={logo}
             alt="logo"
           />
         </div>
-        <div class="flex box">
+        <div class="flex-auto box">
           <div class="box-wrapper">
-            <div class=" bg-white rounded flex items-center mb:w-96 p-3 shadow-sm border border-gray-200">
+            <div class=" bg-white rounded flex items-center lg:w-96 sm:w-28 p-3 shadow-sm border border-gray-200">
               <button class="outline-none focus:outline-none">
                 <svg
                   class=" w-5 text-gray-600 h-5 cursor-pointer"
@@ -59,7 +59,7 @@ const HeadBar = ({ setWordSearch, openSideBar, setOpenSideBar }) => {
           </div>
         </div>
         <div
-          class="flex text-4xl"
+          class="flex-auto text-4xl"
           onClick={() => {
             setOpenSideBar(!openSideBar);
             console.log(openSideBar);

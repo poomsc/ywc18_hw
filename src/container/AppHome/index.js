@@ -16,6 +16,7 @@ const AppHome = () => {
   const [priceLevel, setPriceLevel] = useState(5);
   const [subCategories, setSubCategories] = useState("");
   const [wordSearch, setWordSearch] = useState("");
+  const [searchType, setSearchType] = useState(-1);
 
   useEffect(async () => {
     setLoading(true);
