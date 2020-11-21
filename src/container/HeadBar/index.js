@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "./../../assests/logo.png";
+import { CgDetailsMore } from "react-icons/cg";
 
-const HeadBar = () => {
+const HeadBar = ({ setWordSearch, openSideBar, setOpenSideBar }) => {
   return (
     <nav className="flex flex-wrap bg-white p-3 fixed w-full z-50 h-16">
       <div class="flex justify-items-center">
@@ -14,7 +15,7 @@ const HeadBar = () => {
         </div>
         <div class="flex box">
           <div class="box-wrapper">
-            <div class=" bg-white rounded flex items-center w-96 p-3 shadow-sm border border-gray-200">
+            <div class=" bg-white rounded flex items-center mb:w-96 p-3 shadow-sm border border-gray-200">
               <button class="outline-none focus:outline-none">
                 <svg
                   class=" w-5 text-gray-600 h-5 cursor-pointer"
@@ -31,9 +32,13 @@ const HeadBar = () => {
               <input
                 type="search"
                 name=""
-                placeholder="search for images"
+                placeholder="ค้นหาร้านค้า"
                 x-model="q"
                 class="w-full pl-4 text-sm outline-none focus:outline-none bg-transparent"
+                onChange={(e) => {
+                  setWordSearch(e.target.value);
+                  console.log(e.target.value);
+                }}
               />
               <div class="select">
                 <select
@@ -53,11 +58,17 @@ const HeadBar = () => {
             </div>
           </div>
         </div>
+        <div
+          class="flex text-4xl"
+          onClick={() => {
+            setOpenSideBar(!openSideBar);
+            console.log(openSideBar);
+          }}
+        >
+          <CgDetailsMore />
+        </div>
       </div>
-      {/* <div className="flex items-center flex-shrink-0 text-white mr-6 w-1">
-      </div>
-      
-      </div> */}
+      {/* <div class="h-5 w-screen"></div> */}
     </nav>
   );
 };

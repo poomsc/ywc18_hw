@@ -1,10 +1,12 @@
 import React from "react";
 import "./tailwind.css";
-import AppHome from './container/AppHome';
+import AppHome from "./container/AppHome";
 
 function App() {
   return (
-    <AppHome/>
+    <div>
+      <AppHome />
+    </div>
   );
 }
 

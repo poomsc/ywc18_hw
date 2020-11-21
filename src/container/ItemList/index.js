@@ -8,6 +8,7 @@ const ItemList = ({
   provinces,
   priceLevel,
   subCategories,
+  wordSearch,
 }) => {
   return (
     <div className="container pt-24 mx-auto">
@@ -22,7 +23,7 @@ const ItemList = ({
                   val["addressProvinceName"]
                 ) > 0.7 &&
                   val["priceLevel"] <= priceLevel && (
-                    <Item data={val} provinces={provinces} />
+                    <Item data={val} wordSearch={wordSearch}/>
                   )}
               </>
             );

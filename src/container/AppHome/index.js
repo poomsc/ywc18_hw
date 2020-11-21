@@ -15,6 +15,7 @@ const AppHome = () => {
   const [provinces, setProvinces] = useState("กรุงเทพมหานคร");
   const [priceLevel, setPriceLevel] = useState(5);
   const [subCategories, setSubCategories] = useState("");
+  const [wordSearch, setWordSearch] = useState("");
 
   useEffect(async () => {
     setLoading(true);
@@ -39,7 +40,7 @@ const AppHome = () => {
     </div>
   ) : (
     <div>
-      <HeadBar/>
+      <HeadBar setWordSearch={setWordSearch} openSideBar={openSideBar} setOpenSideBar={setOpenSideBar}/>
       <div className="w-full max-w-screen-xl mx-auto px-6">
         <div class="lg:flex">
           <SideBar
@@ -59,6 +60,7 @@ const AppHome = () => {
               provinces={provinces}
               priceLevel={priceLevel}
               subCategories={subCategories}
+              wordSearch={wordSearch}
             />
           </div>
         </div>
