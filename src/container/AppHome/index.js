@@ -10,7 +10,11 @@ const API = "https://panjs.com/ywc18.json";
 const AppHome = () => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
-  const [openSideBar, setOpenSideBar] = useState(false);
+  const [openSideBar, setOpenSideBar] = useState(true);
+  const [categories, setCategories] = useState(-1);
+  const [provinces, setProvinces] = useState("กรุงเทพมหานคร");
+  const [priceLevel, setPriceLevel] = useState(5);
+  const [subCategories, setSubCategories] = useState("");
 
   useEffect(async () => {
     setLoading(true);
@@ -34,11 +38,30 @@ const AppHome = () => {
       />
     </div>
   ) : (
-    <div className="w-full max-w-screen-xl mx-auto px-6">
-      {console.log(data)}
-      {/* <SideBar data={data}/> */}
-      <div className="min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5">
-        <ItemList data={data}/>
+    <div>
+      <HeadBar/>
+      <div className="w-full max-w-screen-xl mx-auto px-6">
+        <div class="lg:flex">
+          <SideBar
+            data={data}
+            openSideBar={openSideBar}
+            categories={categories}
+            setOpenSideBar={setOpenSideBar}
+            setCategories={setCategories}
+            setProvinces={setProvinces}
+            setPriceLevel={setPriceLevel}
+            setSubCategories={setSubCategories}
+          />
+          <div className=" min-h-screen w-full lg:static lg:max-h-full lg:overflow-visible lg:w-3/4 xl:w-4/5">
+            <ItemList
+              data={data}
+              categories={categories}
+              provinces={provinces}
+              priceLevel={priceLevel}
+              subCategories={subCategories}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
