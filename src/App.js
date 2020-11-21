@@ -4,7 +4,7 @@ import AppHome from "./container/AppHome";
 
 function App() {
   return (
-    <div>
+    <div class="bg-blue-200">
       <AppHome />
     </div>
   );
